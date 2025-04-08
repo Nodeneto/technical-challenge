@@ -8,6 +8,7 @@ export class CardsController {
 
   constructor(private cardsService: CardsService) {}
 
+  // Comment here
   @Post()
   addCard(@Body() card: { sectionId: number; title: string }): Promise<CardEntity> {
     this.logger.log('POST /cards')
