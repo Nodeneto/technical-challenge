@@ -22,6 +22,7 @@ export const BoardContainer = styled.div`
 `
 
 function App() {
+  // Test
   const [sections, setSections] = useState<SectionI[]>([])
 
   useEffect(() => {
