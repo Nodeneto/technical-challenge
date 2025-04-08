@@ -30,7 +30,7 @@ function App() {
       const sortedSections = response.data.sort((a: SectionI, b: SectionI) => a.id - b.id)
       setSections(sortedSections)
     })
-  })
+  }, [])
 
   const onCardSubmit = (sectionId: number, title: string) => {
     axios({
@@ -41,7 +41,7 @@ function App() {
       let sectionsClone: SectionI[] = [...sections]
       for (let i = 0; i < sectionsClone.length; i++) {
         let section: SectionI = sectionsClone[i]
-        if (section.id == sectionId) {
+        if (section.id === sectionId) {
           section.cards.push({
             id: response.data.id,
             title: response.data.title,
